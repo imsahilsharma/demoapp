@@ -1,22 +1,16 @@
 package com.example.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Worker;
-import com.example.demo.repository.WorkerRepository;
-
 @RestController
+@RequestMapping("/testdemo")
 public class DemoController {
-
-	@Autowired
-	WorkerRepository repository;
+	
+	@GetMapping("/check")
 	public void insertValue() {
-		Worker worker = new  Worker();
-		worker.setName("ABc");
-		worker.setPhone(Long.valueOf(1234567890));
-		
-		repository.save(worker);
+		System.out.println("Hello World - Test Demo");
 	}
 
 }
